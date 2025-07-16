@@ -1,7 +1,7 @@
 
 # El Blog de Pepa
 
-<a href="https://ibb.co/Kjrf0KKZ"><img width="200" src="https://i.ibb.co/QFKTbDDB/pepaviaje.png" alt="pepaviaje" border="0"></a>
+<a href="https://ibb.co/Z6dRb53t"><img width="150"  src="https://i.ibb.co/hRsxTbkh/Chat-GPT-Image-Jul-16-2025-09-58-44-PM.png" alt="Chat-GPT-Image-Jul-16-2025-09-58-44-PM" border="0"></a>
 
 Pepa ha creado un blog sobre estancias veraniegas en la Costa Brava.
 La app de Pepa es una aplicación puramente Front End, que debes abrir con Live Server.
