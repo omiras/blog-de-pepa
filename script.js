@@ -11,3 +11,6 @@ const ciudades = {
         descripcion: "Blanes es la puerta de entrada a la Costa Brava, famosa por su jardín botánico y su animado paseo marítimo. Sus playas y calas son muy apreciadas por los visitantes."
     }
 };
+
+// ¡Buena suerte!
+
