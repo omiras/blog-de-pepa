@@ -9,9 +9,9 @@ Para cada iteración, se han adjuntado ejemplos de código usando Chat GPT que n
 
 # Arquitectura
 
-**index.html**: Contiene el HTML estático de la app
-**script.js**: Contiene un objeto con la información sobre las dos ciudades sobre la que Pepa ha escrito información
-**style.css**: Fichero de estilos
+**index.html**: Contiene el HTML estático de la app  
+**script.js**: Contiene un objeto con la información sobre las dos ciudades sobre la que Pepa ha escrito información  
+**style.css**: Fichero de estilos  
 
 ## Iteración 1
 
