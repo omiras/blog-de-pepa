@@ -1,0 +1,16 @@
+/* Estilos mínimos para el blog de Pepa usando PicoCSS como base */
+
+#cityInfo {
+  margin-top: 2em;
+}
+
+#cityImagen {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
+#accomodations {
+  margin-top: 2em;
+}
