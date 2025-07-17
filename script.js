@@ -38,22 +38,36 @@ function mostrarCiudad(ciudadKey) {
 
     // Rellenamos el contenedor del DOM donde debe ir la descripción de la ciudad escogida
     document.querySelector('#cityDescripcion').textContent = info.descripcion;
+
     mostrarAlojamientos(ciudadKey);
 }
 
 // Función para mostrar alojamientos de la ciudad seleccionada
 async function mostrarAlojamientos(ciudadKey) {
     const accomodationsDiv = document.querySelector('#accomodations');
+
+    // Esta operación "limpia" todo el contenido del contenedor #accomodations
     accomodationsDiv.innerHTML = '';
+
+    // Realizamos una petición GET a la API
     const res = await fetch('https://bravabook.onrender.com/api/apartments/search?city=' + ciudadKey);
+    // convertimos el JSON a un array de objetos
     const data = await res.json();
     
+    // Numero de apartamentos que hemos traido de la API. Puesto que "data" es un array, usamos la propiedad .length para conocer su tamaño
     document.querySelector('#accomodationsInfo').style.display = "block";
     document.querySelector('#numAccomodations').textContent = data.length;
     
+    // Para cada apartamento del array de objetos
     for (const a of data) {
+
+        // Creamos un nuevo nodo de tipo "article"
         const article = document.createElement('article');
+
+        // le añadimos la clase CSS 'card'
         article.classList.add('card');
+
+        // Mediante el uso de template strings, creamos HTML De forma dinámica con toda la información del apartamento
         article.innerHTML = `
                 <header>${a.title}</header>
                 <a href="https://bravabook.onrender.com/apartment/${a._id}#reservation" style="text-decoration:none;color:inherit;">
@@ -61,14 +75,18 @@ async function mostrarAlojamientos(ciudadKey) {
                     <footer><strong>Precio:</strong> ${a.price} €</footer>
                 </a>
             `;
+
+        // Añadimos el nodo como hijo del contenedor #accomodations (nos acordamos que HTML es una estructura de árbol)
         accomodationsDiv.appendChild(article);
     }
 
+    // Cambiamos el estilo en linea (atributo style) para pasar de none-->block
     accomodationsDiv.style.display = 'block';
 }
 // Inicializar selector y evento
 const selector = document.querySelector('#citySelector');
 mostrarCiudad(selector.value); // Mostrar la ciudad inicial
 selector.addEventListener('change', function (e) {
+    // Recordar que el objeto 'event' contiene toda la información sobre el evento que se acaba de producir, entre otra, el valor seleccionado en el <select> por el usuario
     mostrarCiudad(e.target.value);
 });
