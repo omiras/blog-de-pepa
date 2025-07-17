@@ -35,14 +35,14 @@ function mostrarCiudad(ciudadKey) {
 async function mostrarAlojamientos(ciudadKey) {
     const accomodationsDiv = document.querySelector('#accomodations');
     accomodationsDiv.innerHTML = '';
-    const res = await fetch('http://localhost:3000/api/apartments');
+    const res = await fetch('https://bravabook.onrender.com/api/apartments/search?city=' + ciudadKey);
     const data = await res.json();
     for (const a of data) {
         const article = document.createElement('article');
         article.innerHTML = `
-                <a href="https://localhost:3000/apartments/${a._id}" style="text-decoration:none;color:inherit;">
+                <h3>${a.title}</h3>
+                <a href="https://bravabook.onrender.com/apartment/${a._id}" style="text-decoration:none;color:inherit;">
                     <img src="${a.mainPhoto}" alt="${a.title}" style="max-width:100%;height:auto;border-radius:8px;" />
-                    <h3>${a.title}</h3>
                     <p><strong>Precio:</strong> ${a.price} €</p>
                 </a>
             `;
