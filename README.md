@@ -18,6 +18,8 @@ Para cada iteración, se han adjuntado ejemplos de código usando ChatGPT que no
 
 ## Iteración 1
 
+[Vídeo iteración 1](https://oscarm.tinytake.com/df/178f1c4/thumbnail?type=attachments&version_no=0&file_version_no=0&thumbnail_size=preview)
+
 Puntos clave:
 
 - Asociar eventos a elementos de control
@@ -34,6 +36,8 @@ Habilita el selector de ciudad para que, al seleccionar cualquiera de las dos ci
 
 ## Iteración 2
 
+[Vídeo iteración 2](https://oscarm.tinytake.com/df/178f20a/thumbnail?type=attachments&version_no=0&file_version_no=0&thumbnail_size=preview)
+
 Puntos clave:
 
 - Hacer una petición _fetch_ a un servidor externo
@@ -49,7 +53,19 @@ Pepa quiere consumir la API https://bravabook.onrender.com/api/apartments/search
 
 [Snippets de código útiles usando ChatGPT](https://chatgpt.com/share/6877fabb-d09c-8002-a074-78eeaa9cd642)
 
-## Iteración BONUS
+## Iteración BONUS - 1
+
+Puntos clave:
+
+- Estos derivados
+
+Haz que el precio del apartamento se muestra de un color u otro dependiendo del precio:
+
+1. Si el apartamento cuesta menos de 100€ por noche, mostrar el precio en verde
+2. Si el apartamento cuesta más de 200€ por noche, mostrar el precio en rojo
+
+
+## Iteración BONUS - 2
 
 Puntos clave:
 
@@ -57,8 +73,7 @@ Puntos clave:
 
 Añade un selector de manera que podamos ordenar los apartamentos por precio ascendente o descendente.
 
-
-## Iteración BONUS
+## Iteración BONUS - 3
 
 Adapta la app para que ahora consuma tu propia API de tu práctica.
 
