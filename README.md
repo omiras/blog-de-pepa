@@ -62,6 +62,9 @@ Puntos clave:
 Haz que el precio del apartamento se muestra de un color u otro dependiendo del precio:
 
 1. Haz que aparezca el número de apartamentos totales que tiene cada ciudad
+
+<img width="400" src="https://oscarm.tinytake.com/media/178fadc?filename=1752764918209_TinyTake17-07-2025-05-08-25_638883617162511949.png&sub_type=thumbnail_preview&type=attachment&width=1199&height=880" title="Powered by TinyTake Screen Capture"/><br>
+
 2. Si el apartamento cuesta menos de 100€ por noche, mostrar el precio en verde
 3. Si el apartamento cuesta más de 200€ por noche, mostrar el precio en rojo
 
