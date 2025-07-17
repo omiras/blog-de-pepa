@@ -44,6 +44,7 @@ Pepa quiere consumir la API https://bravabook.onrender.com/api/apartments/search
 1. Al seleccionar una ciudad, se hace una llamada _fetch_ pasando como parámetro de la _query string_ la ciudad seleccionada
 2. Debemos procesar la respuesta que nos devuelve la API y convertir el JSON a un array de objetos
 3. Crea tantos apartamentos como objetos recibes de la llamada de la API y añádelos al contenedor #accomodations
+4. Al hacer clic en cualquiera de los apartamentos, nos lleva a la página de BravaBook mostrando la vista detalle del apartamento. Por ejemplo: https://bravabook.onrender.com/apartment/6877ef2eda87b827a9a3b9c3
 
 
 [Snippets de código útiles usando ChatGPT](https://chatgpt.com/share/6877fabb-d09c-8002-a074-78eeaa9cd642)
