@@ -47,7 +47,7 @@ async function mostrarAlojamientos(ciudadKey) {
         article.classList.add('card');
         article.innerHTML = `
                 <header>${a.title}</header>
-                <a href="https://bravabook.onrender.com/apartment/${a._id}" style="text-decoration:none;color:inherit;">
+                <a href="https://bravabook.onrender.com/apartment/${a._id}#reservation" style="text-decoration:none;color:inherit;">
                     <img src="${a.mainPhoto}" alt="${a.title}" style="border-radius:8px;" />
                     <footer><strong>Precio:</strong> ${a.price} €</footer>
                 </a>
