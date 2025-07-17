@@ -39,11 +39,12 @@ async function mostrarAlojamientos(ciudadKey) {
     const data = await res.json();
     for (const a of data) {
         const article = document.createElement('article');
+        article.classList.add('card');
         article.innerHTML = `
-                <h3>${a.title}</h3>
+                <header>${a.title}</header>
                 <a href="https://bravabook.onrender.com/apartment/${a._id}" style="text-decoration:none;color:inherit;">
-                    <img src="${a.mainPhoto}" alt="${a.title}" style="max-width:100%;height:auto;border-radius:8px;" />
-                    <p><strong>Precio:</strong> ${a.price} €</p>
+                    <img src="${a.mainPhoto}" alt="${a.title}" style="max-width:50%;height:auto;border-radius:8px;" />
+                    <footer><strong>Precio:</strong> ${a.price} €</footer>
                 </a>
             `;
         accomodationsDiv.appendChild(article);
