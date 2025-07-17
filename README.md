@@ -6,9 +6,11 @@
 Pepa ha creado un blog sobre estancias veraniegas en la Costa Brava.
 La app de Pepa es una aplicación puramente Front End, que debes abrir con Live Server.
 
-Recomendación: intentad hacer el ejercicio sin pedir explícitamente la solución a la IA.
-Si tras 30 minutos por iteración no podéis avanzar, podéis usar Copilot. 
+**Recomendación:** intentad hacer el ejercicio sin pedir explícitamente la solución a la IA.
+Si tras 30 minutos por _iteración_ no podéis avanzar, podéis usar Copilot. 
 Para cada iteración, se han adjuntado ejemplos de código usando ChatGPT que no dan una solución directa al ejercicio pero ayudan a resolverlo.
+
+El **diseño** no tiene por qué quedar igual que en la demo (de hecho se parece demasiado al de BravaBook, pero eso es por usar PicoCSS para la maquetación 🫠)
 
 # Arquitectura
 
