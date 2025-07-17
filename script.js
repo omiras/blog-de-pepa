@@ -18,6 +18,7 @@ function mostrarCiudad(ciudadKey) {
     if (!ciudadKey) {
         document.querySelector('#cityInfo').style.display = "none";
         document.querySelector('#accomodations').innerHTML = "";
+        document.querySelector('#accomodationsInfo').style.display = "none";
         return;
     }
 
@@ -37,13 +38,17 @@ async function mostrarAlojamientos(ciudadKey) {
     accomodationsDiv.innerHTML = '';
     const res = await fetch('https://bravabook.onrender.com/api/apartments/search?city=' + ciudadKey);
     const data = await res.json();
+    
+    document.querySelector('#accomodationsInfo').style.display = "block";
+    document.querySelector('#numAccomodations').textContent = data.length;
+    
     for (const a of data) {
         const article = document.createElement('article');
         article.classList.add('card');
         article.innerHTML = `
                 <header>${a.title}</header>
                 <a href="https://bravabook.onrender.com/apartment/${a._id}" style="text-decoration:none;color:inherit;">
-                    <img src="${a.mainPhoto}" alt="${a.title}" style="max-width:50%;height:auto;border-radius:8px;" />
+                    <img src="${a.mainPhoto}" alt="${a.title}" style="border-radius:8px;" />
                     <footer><strong>Precio:</strong> ${a.price} €</footer>
                 </a>
             `;

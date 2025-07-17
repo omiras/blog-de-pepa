@@ -13,5 +13,10 @@
 
 #accomodations {
   margin-top: 2em;
+  margin: 0 auto;
+  width: 75%;
 }
 
+#numAccomodations {
+  color: rgb(196, 128, 208)
+}
