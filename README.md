@@ -38,7 +38,7 @@ Habilita el selector de ciudad para que, al seleccionar cualquiera de las dos ci
 
 ## Iteración 2
 
-[Vídeo iteración 2](https://oscarm.tinytake.com/df/178f20a/thumbnail?type=attachments&version_no=0&file_version_no=0&thumbnail_size=preview)
+[Vídeo iteración 2](https://oscarm.tinytake.com/df/178fb07/thumbnail?type=attachments&version_no=0&file_version_no=0&thumbnail_size=preview)
 
 Puntos clave:
 
@@ -50,7 +50,7 @@ Pepa quiere consumir la API https://bravabook.onrender.com/api/apartments/search
 1. Al seleccionar una ciudad, se hace una llamada _fetch_ pasando como parámetro de la _query string_ la ciudad seleccionada
 2. Debemos procesar la respuesta que nos devuelve la API y convertir el JSON a un array de objetos
 3. Crea tantos apartamentos como objetos recibes de la llamada de la API y añádelos al contenedor #accomodations
-4. Al hacer clic en cualquiera de los apartamentos, nos lleva a la página de BravaBook mostrando la vista detalle del apartamento. Por ejemplo: https://bravabook.onrender.com/apartment/6877ef2eda87b827a9a3b9c3
+4. Al hacer clic en cualquiera de los apartamentos, nos lleva a la página de BravaBook mostrando la vista detalle del apartamento. Por ejemplo: https://bravabook.onrender.com/apartment/6877ef2eda87b827a9a3b9c3 . **Bonus**: El cliente es posicionado directamente en el formulario para hacer la reserva (tal y como se observa en el vídeo), no al principio de la página Web.
 
 
 [Snippets de código útiles usando ChatGPT](https://chatgpt.com/share/6877fabb-d09c-8002-a074-78eeaa9cd642)
