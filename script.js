@@ -15,6 +15,8 @@ const ciudades = {
 // Función para mostrar la información de la ciudad seleccionada
 function mostrarCiudad(ciudadKey) {
 
+
+    // Si selecionamos la opción "----", "reseteamos" todos los contenedores
     if (!ciudadKey) {
         document.querySelector('#cityInfo').style.display = "none";
         document.querySelector('#accomodations').innerHTML = "";
@@ -22,12 +24,19 @@ function mostrarCiudad(ciudadKey) {
         return;
     }
 
+    // Obtenemos el objeto "palamos" o "blanes"
     const info = ciudades[ciudadKey];
+
+    // Modificamos estilos en línea para que se vea el contenedor #cityInfo y ponemos el nombre de la ciudad seleccionada en la propiedad .textContent del objeto del DOM #cityNombre. Puesto que "info" es un objeto, debemos usar la notación "." para acceder a la propiedad "nombre"
     document.querySelector('#cityInfo').style.display = "block";
     document.querySelector('#cityNombre').textContent = info.nombre;
+    
+    // Rellenamos los atributo "src" (url de la imagen) y "alt" (texto alternativo)
     const img = document.querySelector('#cityImagen');
     img.src = info.imagen;
     img.alt = info.nombre;
+
+    // Rellenamos el contenedor del DOM donde debe ir la descripción de la ciudad escogida
     document.querySelector('#cityDescripcion').textContent = info.descripcion;
     mostrarAlojamientos(ciudadKey);
 }
