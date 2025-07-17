@@ -61,8 +61,9 @@ Puntos clave:
 
 Haz que el precio del apartamento se muestra de un color u otro dependiendo del precio:
 
-1. Si el apartamento cuesta menos de 100€ por noche, mostrar el precio en verde
-2. Si el apartamento cuesta más de 200€ por noche, mostrar el precio en rojo
+1. Haz que aparezca el número de apartamentos totales que tiene cada ciudad
+2. Si el apartamento cuesta menos de 100€ por noche, mostrar el precio en verde
+3. Si el apartamento cuesta más de 200€ por noche, mostrar el precio en rojo
 
 
 ## Iteración BONUS - 2
