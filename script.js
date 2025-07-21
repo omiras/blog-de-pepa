@@ -39,7 +39,7 @@ function mostrarCiudad(ciudadKey) {
     // Rellenamos el contenedor del DOM donde debe ir la descripción de la ciudad escogida
     document.querySelector('#cityDescripcion').textContent = info.descripcion;
 
-    mostrarAlojamientos(ciudadKey);
+    mostrarAlojamientos(ciudadKey); // mostrarAlojamientos("palamos")
 }
 
 // Función para mostrar alojamientos de la ciudad seleccionada
@@ -85,8 +85,10 @@ async function mostrarAlojamientos(ciudadKey) {
 }
 // Inicializar selector y evento
 const selector = document.querySelector('#citySelector');
-mostrarCiudad(selector.value); // Mostrar la ciudad inicial
+
+
+
 selector.addEventListener('change', function (e) {
     // Recordar que el objeto 'event' contiene toda la información sobre el evento que se acaba de producir, entre otra, el valor seleccionado en el <select> por el usuario
-    mostrarCiudad(e.target.value);
+    mostrarCiudad(e.target.value); // mostrarCiudad("palamos")
 });
