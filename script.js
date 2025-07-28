@@ -12,83 +12,56 @@ const ciudades = {
     }
 };
 
-// Función para mostrar la información de la ciudad seleccionada
 function mostrarCiudad(ciudadKey) {
-
-
-    // Si selecionamos la opción "----", "reseteamos" todos los contenedores
     if (!ciudadKey) {
-        document.querySelector('#cityInfo').style.display = "none";
-        document.querySelector('#accomodations').innerHTML = "";
-        document.querySelector('#accomodationsInfo').style.display = "none";
+        $('#cityInfo').hide(); // función hide , oculta el contenedor (no tienes que ir jugando con el display:none)
+        $('#accomodations').empty();
+        $('#accomodationsInfo').hide();
         return;
     }
 
-    // Obtenemos el objeto "palamos" o "blanes"
     const info = ciudades[ciudadKey];
 
-    // Modificamos estilos en línea para que se vea el contenedor #cityInfo y ponemos el nombre de la ciudad seleccionada en la propiedad .textContent del objeto del DOM #cityNombre. Puesto que "info" es un objeto, debemos usar la notación "." para acceder a la propiedad "nombre"
-    document.querySelector('#cityInfo').style.display = "block";
-    document.querySelector('#cityNombre').textContent = info.nombre;
-    
-    // Rellenamos los atributo "src" (url de la imagen) y "alt" (texto alternativo)
-    const img = document.querySelector('#cityImagen');
-    img.src = info.imagen;
-    img.alt = info.nombre;
+    $('#cityInfo').show();
+    $('#cityNombre').text(info.nombre);
 
-    // Rellenamos el contenedor del DOM donde debe ir la descripción de la ciudad escogida
-    document.querySelector('#cityDescripcion').textContent = info.descripcion;
+    $('#cityImagen').attr('src', info.imagen).attr('alt', info.nombre);
 
-    mostrarAlojamientos(ciudadKey); // mostrarAlojamientos("palamos")
+    $('#cityDescripcion').text(info.descripcion);
+
+    mostrarAlojamientos(ciudadKey);
 }
 
-// Función para mostrar alojamientos de la ciudad seleccionada
 async function mostrarAlojamientos(ciudadKey) {
-    const accomodationsDiv = document.querySelector('#accomodations');
+    const $accomodationsDiv = $('#accomodations'); // querySelector
+    $accomodationsDiv.empty(); // empty -> limpiar el contenedor
 
-    // Esta operación "limpia" todo el contenido del contenedor #accomodations
-    accomodationsDiv.innerHTML = '';
+    try {
+        const res = await fetch('https://bravabook.onrender.com/api/apartments/search?city=' + ciudadKey);
+        const data = await res.json();
 
-    // Realizamos una petición GET a la API
-    const res = await fetch('https://bravabook.onrender.com/api/apartments/search?city=' + ciudadKey);
-    // convertimos el JSON a un array de objetos
-    const data = await res.json();
-    
-    // Numero de apartamentos que hemos traido de la API. Puesto que "data" es un array, usamos la propiedad .length para conocer su tamaño
-    document.querySelector('#accomodationsInfo').style.display = "block";
-    document.querySelector('#numAccomodations').textContent = data.length;
-    
-    // Para cada apartamento del array de objetos
-    for (const a of data) {
+        $('#accomodationsInfo').show();
+        $('#numAccomodations').text(data.length);
 
-        // Creamos un nuevo nodo de tipo "article"
-        const article = document.createElement('article');
-
-        // le añadimos la clase CSS 'card'
-        article.classList.add('card');
-
-        // Mediante el uso de template strings, creamos HTML De forma dinámica con toda la información del apartamento
-        article.innerHTML = `
+        data.forEach(a => {
+            const $article = $('<article>').addClass('card').html(`
                 <header>${a.title}</header>
                 <a href="https://bravabook.onrender.com/apartment/${a._id}#reservation" style="text-decoration:none;color:inherit;">
                     <img src="${a.mainPhoto}" alt="${a.title}" style="border-radius:8px;" />
                     <footer><strong>Precio:</strong> ${a.price} €</footer>
                 </a>
-            `;
+            `);
+            $accomodationsDiv.append($article);
+        });
 
-        // Añadimos el nodo como hijo del contenedor #accomodations (nos acordamos que HTML es una estructura de árbol)
-        accomodationsDiv.appendChild(article);
+        $accomodationsDiv.show(); // mostrar el contenedor
+    } catch (error) {
+        console.error("Error al obtener alojamientos:", error);
     }
-
-    // Cambiamos el estilo en linea (atributo style) para pasar de none-->block
-    accomodationsDiv.style.display = 'block';
 }
-// Inicializar selector y evento
-const selector = document.querySelector('#citySelector');
 
-
-
-selector.addEventListener('change', function (e) {
-    // Recordar que el objeto 'event' contiene toda la información sobre el evento que se acaba de producir, entre otra, el valor seleccionado en el <select> por el usuario
-    mostrarCiudad(e.target.value); // mostrarCiudad("palamos")
+$(document).ready(function () {
+    $('#citySelector').on('change', function () {
+        mostrarCiudad($(this).val());
+    });
 });
